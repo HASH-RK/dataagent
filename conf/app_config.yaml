@@ -1,0 +1,51 @@
+# 日志配置
+logging:
+  file:
+    enable: true
+    level: INFO
+    path: logs
+    rotation: "1 KB"
+    retention: "7 days"
+  console:
+    enable: true
+    level: INFO
+
+# 数据库meta的配置
+db_meta:
+  host: localhost
+  port: 3306
+  user: atguigu
+  password: Atguigu.123
+  database: meta2
+
+# 数据库dw的配置
+db_dw:
+  host: localhost
+  port: 3306
+  user: atguigu
+  password: Atguigu.123
+  database: dw2
+
+# qdrant的配置
+qdrant:
+  host: localhost
+  port: 6333
+  embedding_size: 1024
+
+# embedding的配置
+embedding:
+  host: localhost
+  port: 8081
+  model: BAAI/bge-large-zh-v1.5
+
+# es的配置
+es:
+  host: localhost
+  port: 9200
+  index_name: data_agent
+
+# llm的配置
+# api_key 从环境变量 DEEPSEEK_API_KEY 读取，请勿把真实密钥写进本文件
+llm:
+  model_name: deepseek-chat
+  api_key: ${oc.env:DEEPSEEK_API_KEY,""}
